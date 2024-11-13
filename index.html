@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
   <title>My LIFF app</title>
   <link rel="stylesheet" href="css/style.css" media="all">
 </head>
+
 <body>
   <p id="os"><b>OS:</b> </p>
   <p id="language"><b>Language:</b> </p>
@@ -36,7 +38,7 @@
   <button id="btnLogOut" onclick="logOut()">Log Out</button>
   <button id="btnClose" onclick="closed()">Close</button>
 
-  <button onclick="send()" name="submit">Salesforce</button>
+  <button onclick="send()">Salesforce</button>
   <!-- <script src="js/vconsole.min.js"></script> -->
   <!-- <script>
     var vConsole = new VConsole()
@@ -71,11 +73,12 @@
 
       fetch('https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8', {
         method: 'POST',
-        headers:{
+        headers: {
           'Content-Type': 'application/x-www-form-urlencoded'
-        },    
+        },
         body: new URLSearchParams(params)
-      });
+      }).then(response => console.log(response))
+        .catch(error => console.log(error));
     }
 
     function createUniversalLink() {
@@ -112,7 +115,7 @@
     }
 
     async function main() {
-      // alert("LINE Developers x Skooldio")
+      alert("LINE Developers x Skooldio");
       // await liff.init({ liffId: "YOUR-LIFF-ID" })
       // getEnvironment()
       // getUserProfile()
@@ -123,4 +126,5 @@
     main()
   </script>
 </body>
+
 </html>
