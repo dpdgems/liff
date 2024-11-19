@@ -38,7 +38,6 @@
   <button id="btnLogOut" onclick="logOut()">Log Out</button>
   <button id="btnClose" onclick="closed()">Close</button>
 
-  <button onclick="send()">Salesforce</button>
   <!-- <script src="js/vconsole.min.js"></script> -->
   <!-- <script>
     var vConsole = new VConsole()
@@ -47,41 +46,6 @@
 
   <!-- <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script> -->
   <script>
-    function send() {
-      const params = {
-        oid: '00D5g00000A5CvD',
-        lead_source: 'Digital Marketing',
-        Product__c: 'CPXLine',
-        retURL: '/',
-        "00N5g00000M5X0i": '',
-        "00N5g00000M5X0n": '',
-        "00N5g00000M5X0x": '',
-        first_name: 'test from',
-        last_name: 'DEV',
-        email: 'nimdev@mailinator.com',
-        // first_name: this.state.firstname,
-        // last_name: this.state.lastname,
-        // email: this.state.email,
-        "00N5g00000M5XCW": 'TH +66',
-        phone: '0812345678',
-        company: 'bol',
-        title: 'dev',
-        "00N5g00000M5X0J": 'Facebook',
-        "00N5g00000M5X0d": '1',
-        submit: 'ส่ง'
-      };
-
-      fetch('https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8', {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded'
-        },
-        body: new URLSearchParams(params)
-      }).then(response => console.log(response))
-        .catch(error => console.log(error));
-    }
-
     function createUniversalLink() {
     }
 
